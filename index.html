@@ -25,13 +25,19 @@
     { id: 8, name: 'shep Jr.'},
     { id: 99, name: 'lucy'}
   ];
+  let counter = 1;
+  const favorites = [];
   const list = document.querySelector('#list')
   employees.forEach(person => {
     const li = document.createElement('li');
     const span =document.createElement('span');
     li.className = 'regular';
     li.addEventListener('click', () => {
-      li.classList.toggle('favorite');
+      if (counter < 4) {
+        li.classList.toggle('favorite');
+      console.log('sending' , person.id)
+      counter++;
+      }
     });
     span.innerHTML = person.name;
     li.append(span);
